@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="product1">
+
+    <div class="container">
+        <div id="login" class="form-container">
+            <h2>Login</h2>
+            <form action="login.php" method="post">
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+            <p class="toggle-form" onclick="toggleForm('signup')">Don't have an account? Sign Up</p>
+        </div>
+        <div id="signup" class="form-container" style="display: none;">
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="post">
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-container">
+                    <label for="confirmpass">Confirm Password</label>
+                    <input type="password" id="confirmpass" name="confirmpass" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="toggle-form" onclick="toggleForm('login')">Already have an account? Log In</p>
+        </div>
+       
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('signup').style.display = 'none';
+
+            if (formType === 'login') {
+                document.getElementById('login').style.display = 'block';
+            } else if (formType === 'signup') {
+                document.getElementById('signup').style.display = 'block';
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="product1">
+
+    <div class="container">
+        <div id="login" class="form-container">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-container">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="login-username" required>
+                </div>
+                <div class="input-container">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+            <p class="toggle-form" onclick="toggleForm('signup')">Don't have an account? Sign Up</p>
+        </div>
+        <div id="signup" class="form-container" style="display: none;">
+            <h2>Sign Up</h2>
+            <form action="#">
+                <div class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-container">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="toggle-form" onclick="toggleForm('login')">Already have an account? Log In</p>
+        </div>
+        <div id="weather" class="form-container" style="display: none;">
+            <h2>Weather App</h2>
+             Weather data will be displayed here 
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formType) {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('signup').style.display = 'none';
+            document.getElementById('weather').style.display = 'none';
+
+            if (formType === 'login') {
+                document.getElementById('login').style.display = 'block';
+            } else if (formType === 'signup') {
+                document.getElementById('signup').style.display = 'block';
+            } else if (formType === 'weather') {
+                document.getElementById('weather').style.display = 'block';
+            }
+        }
+    </script>
+</div>
+</body>
+</html> -->

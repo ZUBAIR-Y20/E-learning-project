@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+    <div class="product1">
+
+    <div class="container">
+        <div id="login" class="form-container">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-container">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="login-username" required>
+                </div>
+                <div class="input-container">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="login-password" required>
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+            <p class="toggle-form" onclick="toggleForm('signup')">Don't have an account? Sign Up</p>
+        </div></div>
+        <script>
+            function toggleForm(formType) {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('signup').style.display = 'none';
+                document.getElementById('weather').style.display = 'none';
+            
+                if (formType === 'login') {
+                    document.getElementById('login').style.display = 'block';
+                } else if (formType === 'signup') {
+                    document.getElementById('signup').style.display = 'block';
+                } else if (formType === 'weather') {
+                    document.getElementById('weather').style.display = 'block';
+                }
+            }
+            </script>
+            
+    </div>
+     
+
+<script type="module">
+// Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyASXe1MfgSlXOfPm-d_7oXpiC5cp9pbeDc",
+      authDomain: "project3-371f3.firebaseapp.com",
+      projectId: "project3-371f3",
+      storageBucket: "project3-371f3.appspot.com",
+      messagingSenderId: "437988944523",
+      appId: "1:437988944523:web:69d23bb071e7283954c28e"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    document.getElementById("submit").addEventListener('click',function(e){
+    e.preventDefault();
+    set(ref(db, 'user/'+document.getElementById('username').value),
+    {
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value,
+      
+    })
+    alert("login successful !");
+    })
+    </script>
+    
+<script src="scripts.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<div class="navbar-utils">
+    <a class="btn-getstarted" href="https://prject/soft2/">Login</a>
+    <div class="tutor-login-form-wrapper">
+        <div class="tutor-fs-5 tutor-color-black tutor-mb-32">
+            Hi, Welcome back!			</div>
+            <div class="tutor-alert tutor-warning tutor-mb-12" style="display:block; grid-gap: 0px 10px;">
+    Nonce verification failed	</div>
+<form id="tutor-login-form" method="post">
+    <input type="hidden" id="_tutor_nonce" name="_tutor_nonce" value="c7127e5964"><input type="hidden" name="_wp_http_referer" value="/dashboard/">	<input type="hidden" name="tutor_action" value="tutor_user_login">
+<input type="hidden" name="redirect_to" value="https://codanics.com/dashboard/">
+
+<div class="tutor-mb-20">
+    <input type="text" class="tutor-form-control" placeholder="Username or Email Address" name="log" value="" size="20" required="">
+</div>
+
+<div class="tutor-mb-32">
+    <input type="password" class="tutor-form-control" placeholder="Password" name="pwd" value="" size="20" required="">
+</div>
+
+<div class="tutor-login-error"></div>
+        <input type="text" style="display:none" autocomplete="off" value="" name="_uuid">
+        <div class="tutor-d-flex tutor-justify-between tutor-align-center tutor-mb-40">
+    <div class="tutor-form-check">
+        <input id="tutor-login-agmnt-1" type="checkbox" class="tutor-form-check-input tutor-bg-black-40" name="rememberme" value="forever">
+        <label for="tutor-login-agmnt-1" class="tutor-fs-7 tutor-color-muted">
+            Keep me signed in			</label>
+    </div>
+    <a href="https://codanics.com/dashboard/retrieve-password" class="tutor-btn tutor-btn-ghost">
+        Forgot?		</a>
+</div>
+
+    <button type="submit" class="tutor-btn tutor-btn-primary tutor-btn-block">
+    Sign In	</button>
+
+                <div class="tutor-text-center tutor-fs-6 tutor-color-secondary tutor-mt-20">
+        Don't have an account?&nbsp;
+        <a href="https://codanics.com/student-registration/?redirect_to=https://codanics.com/dashboard/" class="tutor-btn tutor-btn-link">
+            Register Now			</a>
+    </div>
+    </form>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" id="tutor-registration-form">
+        <input type="hidden" name="tutor_course_enroll_attempt" value="">
+        
+        <input type="hidden" id="_tutor_nonce" name="_tutor_nonce" value="c7127e5964"><input type="hidden" name="_wp_http_referer" value="/student-registration/?redirect_to=https%3A%2F%2Fcodanics.com%2Fdashboard%2F">			<input type="hidden" value="tutor_register_student" name="tutor_action">
+
+        
+        <div class="tutor-form-row">
+            <div class="tutor-form-col-6">
+                <div class="tutor-form-group">
+                    <label>
+                        First Name						</label>
+
+                    <input type="text" name="first_name" value="" placeholder="First Name" required="" autocomplete="given-name">
+                </div>
+            </div>
+
+            <div class="tutor-form-col-6">
+                <div class="tutor-form-group">
+                    <label>
+                        Last Name						</label>
+
+                    <input type="text" name="last_name" value="" placeholder="Last Name" required="" autocomplete="family-name">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tutor-form-row">
+            <div class="tutor-form-col-6">
+                <div class="tutor-form-group">
+                    <label>
+                        User Name						</label>
+
+                    <input type="text" name="user_login" class="tutor_user_name" value="" placeholder="User Name" required="" autocomplete="username">
+                </div>
+            </div>
+
+            <div class="tutor-form-col-6">
+                <div class="tutor-form-group">
+                    <label>
+                        E-Mail						</label>
+
+                    <input type="text" name="email" value="" placeholder="E-Mail" required="" autocomplete="email">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tutor-form-row">
+            <div class="tutor-form-col-6">
+                <div class="tutor-form-group">
+                    <label>
+                        Password						</label>
+
+                    <input type="password" name="password" value="" placeholder="Password" required="" autocomplete="new-password">
+                </div>
+            </div>
+
+            <div class="tutor-form-col-6">
+                <div class="tutor-form-group">
+                    <label>
+                        Password confirmation						</label>
+
+                    <input type="password" name="password_confirmation" value="" placeholder="Password Confirmation" required="" autocomplete="new-password">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tutor-form-row">
+            <div class="tutor-form-col-12">
+                <div class="tutor-form-group">
+                        <input type="text" style="display:none" autocomplete="off" value="" name="_uuid">
+                        </div>
+            </div>
+        </div>    
+
+        
+                                    <div class="tutor-mb-24">
+                By signing up, I agree with the website's <a target="_blank" href="https://codanics.com/refund_returns/" title="Terms and Conditions">Terms and Conditions</a>
+            </div>
+        
+        <div>
+            <button type="submit" name="tutor_register_student_btn" value="register" class="tutor-btn tutor-btn-primary tutor-btn-block">Register</button>
+        </div>
+                    
+    </form>
+    <button type="submit" name="tutor_register_student_btn" value="register" class="tutor-btn tutor-btn-primary tutor-btn-block">Register</button>
+    <main>
+   </ul>
+</nav> -->

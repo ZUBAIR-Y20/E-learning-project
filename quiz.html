@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>Courses - E-Learning Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .imgb {
+            display: cover;
+        }
+
+        header {
+            background-color: purple;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .course {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .course:hover {
+            transform: scale(1.05);
+        }
+
+        .course img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .course-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .course h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .course p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        footer {
+            background-color: purple;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn2 {
+            margin-left: 95%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Courses - E-Learning Platform</h1>
+        <div class="btn2">
+            <a href="dashboard.html">
+                <button type="button" class="btn btn-primary" style="margin: 3px;">Back</button>
+            </a>
+        </div>
+    </header>
+
+    <section>
+        <div class="course">
+            <h2>Course Name: JAVA</h2>
+            <img id="imgb" src="https://tse1.mm.bing.net/th?id=OIP.OSpHUHUwvofjQNe7AJZ9eQHaEo&pid=Api&P=0&h=220"
+       alt="Course 2">
+               <div class="btn1">
+                <a href="javaquiz.html">
+                    <button type="button" class="btn btn-primary" style="margin: 3px;">Start Quiz Now</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="course">
+            <h2>Course Name: C++</h2>
+            <img id="imgb" src="https://c8.alamy.com/comp/2CFJA2D/c-logo-2CFJA2D.jpg" alt="Course 2">
+
+            <div class="btn1">
+                <a href="cplusquiz.html">
+                    <button type="button" class="btn btn-primary" style="margin: 3px;">Start Quiz Now</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="course">
+            <h2>Course Name: JAVASCRIPT</h2>
+            <img id="imgb" src="https://1000logos.net/wp-content/uploads/2020/09/JavaScript-Logo-2048x1280.png"
+                alt="Course 2">
+            <div class="btn1">
+                <a href="script.html">
+                    <button type="button" class="btn btn-primary" style="margin: 3px;">Start Quiz Now</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="course">
+            <h2>Course Name: KOTLIN</h2>
+            <img id="imgb" src="https://tse3.mm.bing.net/th?id=OIP.UyNvRqWFYX9OTYO-aXWSpwHaHa&pid=Api&P=0&h=220" alt="Course 2">
+            <div class="btn1">
+                <a href="kotlinquiz.html">
+                    <button type="button" class="btn btn-primary" style="margin: 3px;">Start Quiz Now</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="course">
+            <h2>Course Name: PYTHON</h2>
+            <img id="imgb" src="https://wallpapercave.com/wp/wp8816346.jpg" alt="Course 2">
+            <div class="btn1">
+                <a href="pythonquiz.html">
+                    <button type="button" class="btn btn-primary" style="margin: 3px;">Start Quiz Now</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="course">
+            <h2>Course Name: C#</h2>
+            <img id="imgb"
+                src="https://images.ctfassets.net/23aumh6u8s0i/1IKVNqiLhNURzZXp652sEu/4379cfba19f0e19873af6074d3017f70/csharp"
+                alt="Course 2">
+            <div class="btn1">
+                <a href="chashquiz.html">
+                    <button type="button" class="btn btn-primary" style="margin: 3px;">Start Quiz Now</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 E-Learning Platform</p>
+    </footer>
+</body>
+
+</html>

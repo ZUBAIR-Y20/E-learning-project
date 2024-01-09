@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <title>Courses - E-Learning Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: purple;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .ab {
+            margin-left: 90%;
+
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .course {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .course:hover {
+            transform: scale(1.05);
+        }
+
+        .course img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .course-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .course h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .course p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .enroll-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .course-description {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: purple;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Courses - E-Learning Platform</h1>
+        <div class="ab">
+            <a href="courses.html">
+                <button type="button" class="btn btn-primary" style="margin: 3px;">Back</button>
+            </a>
+        </div>
+    </header>
+
+    <section id="coursesSection"></section>
+
+    <div class="course-description" id="courseDescription">
+        <span class="close-btn" onclick="hideCourseDescription()">&times;</span>
+        <h2 id="courseTitle">Course Name: </h2>
+        <p id="courseDetails">Course details go here.</p>
+        <p id="courseInstructor">Instructor: </p>
+        <p id="courseDuration">Duration: </p>
+        <p id="courseLevel">Level: </p>
+        <div class="btn1">
+            <a href="enrol1.html">
+                <button type="button" class="btn btn-primary" style="margin: 3px;">Enroll Now</button>
+            </a>
+        </div>    </div>
+
+    
+<center><h5>Click the link below to open the course video:</h5></center>
+
+<!-- Link to toggle the embedded video -->
+<center> <a href="javascript:void(0)" onclick="toggleVideo()" id="toggleLink">www.kotlin-video/lectures.com</a>
+
+<!-- Embedded video container -->
+<div id="videoContainer" style="display: none;">
+    <iframe width="560" height="315" src="" frameborder="0" allowfullscreen id="videoFrame"></iframe>
+</div>
+</center> 
+<script>
+// Function to toggle the video visibility and update the link text
+function toggleVideo() {
+    // Get the video container element
+    var videoContainer = document.getElementById('videoContainer');
+
+    // Toggle the visibility style
+    videoContainer.style.display = (videoContainer.style.display === 'none') ? 'block' : 'none';
+
+    // If the video is being shown, set the video source
+    if (videoContainer.style.display === 'block') {
+        // Get the video element
+        var videoFrame = document.getElementById('videoFrame');
+
+        // Set the video source in the iframe
+        videoFrame.src = "https://www.youtube.com/embed/EExSSotojVI";
+    }
+
+    // Update the link text based on the video visibility
+    var toggleLink = document.getElementById('toggleLink');
+    toggleLink.textContent = (videoContainer.style.display === 'none') ? 'www.java-video/lecture-1/code-with-harry.com' : 'Hide Video';
+}
+</script>
+
+
+
+    <footer>
+        <p>&copy; 2023 E-Learning Platform</p>
+    </footer>
+
+    <script>
+        var courses = [
+            {
+                id: 'java',
+                name: 'Java',
+                description: 'Introduction to Kotlin',
+                instructor: 'Sir Asif Awan',
+                duration: '10 weeks',
+                level: 'Beginner'
+            },
+            // Add more courses as needed
+        ];
+
+        function showCourseDescription(courseId) {
+            var course = courses.find(c => c.id === courseId);
+            if (course) {
+                document.getElementById('courseTitle').innerText = 'Course Name: ' + course.name;
+                document.getElementById('courseDetails').innerText = course.description;
+                document.getElementById('courseInstructor').innerText = 'Instructor: ' + course.instructor;
+                document.getElementById('courseDuration').innerText = 'Duration: ' + course.duration;
+                document.getElementById('courseLevel').innerText = 'Level: ' + course.level;
+                document.getElementById('courseDescription').style.display = 'block';
+            }
+        }
+
+        function hideCourseDescription() {
+            document.getElementById('courseDescription').style.display = 'none';
+        }
+
+
+        // Dynamically generate course sections
+        var coursesSection = document.getElementById('coursesSection');
+        courses.forEach(course => {
+            var courseDiv = document.createElement('div');
+            courseDiv.className = 'course';
+            courseDiv.onclick = function () { showCourseDescription(course.id); };
+
+            courseDiv.innerHTML = `
+                <h2>${course.name}</h2>
+                <img src="https://tse3.mm.bing.net/th?id=OIP.UyNvRqWFYX9OTYO-aXWSpwHaHa&pid=Api&P=0&h=220" alt="${course.name}">
+                <div class="course-info">
+                    <p>${course.description}</p>
+                    <p>Instructor: ${course.instructor}</p>
+                    <p>Duration: ${course.duration}</p>
+                    <p>Level: ${course.level}</p>
+                </div>
+            `;
+
+            coursesSection.appendChild(courseDiv);
+        });
+    </script>
+</body>
+
+</html>

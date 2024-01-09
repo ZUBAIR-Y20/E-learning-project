@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow:hidden ; */
+    overflow-x: hidden;
+    /* background: #000; */
+}
+.detail{
+    position: absolute;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 230px;
+    position: absolute;
+    background: #fff;
+   top: 50%;
+   background-color: #fff;
+   left: 50%;
+    box-shadow: 0 0 10px #F8F9F9;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+    /* visibility: hidden;  */
+    transition: transform 0.4s ;
+}
+.myDetail{
+    background-color: #fff;
+    width: 100%;
+    margin: 30px;
+    /* border: 2px solid saddlebrown; */
+}
+.myDetail input{
+    width: 90%;
+    margin-bottom: 6px;
+   padding: 4px 8px;
+   border-radius: 5px;
+   border: 1px solid #e4e2e2;
+
+display: block;
+}
+.myDetail h1{
+    margin-bottom: 3px;
+}
+.myDetail button{
+    cursor: pointer;
+    background: #0077B6;
+    font-size: 14px;
+   box-shadow: 0 0 5px #000;
+   margin-top: 10px;
+    padding: 6px 20px;
+    outline: none;
+    border: none;
+}
+.error{
+    display: none;
+    
+}
+.show{
+    display: block;
+    color: red;
+    
+}
+.popup{
+    width: 400px;
+    height: 230px;
+    position: absolute;
+    background: #fff;
+   top: 0%;
+   left: 50%;
+   box-shadow: 0 0 10px #F8F9F9;
+    transform: translate(-50%,-50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s ;
+   
+}
+
+
+.open-popup{
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+.active{
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.5;
+}
+.inactive{
+    transform: translate(-50%,-50%) scale(0.1);
+    visibility: hidden; 
+    transition: transform 0.4s ;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #235789;
+  
+
+}
+.logo{
+    font-size: 24px;
+    margin: 18px;
+    color: #FFB30F;
+}
+#recordButton{
+    background: #0077B6;
+    font-size: 14px;
+    margin: 12px;
+    list-style-type: none;
+    padding: 12px 16px;
+    /* border-radius: 8px; */
+    outline: none;
+    border: none;
+}
+#recordButton:hover{
+    background: #FFB30F;
+    border: 1px solid #0077B6;
+    cursor:pointer;
+}
+
+.container{
+    /* border: 1px solid red; */
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ /* background: #000; */
+ background: url(./pic.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 90vh;
+ width: 100%;
+    
+}
+.quizContainer{
+    margin: 50px;
+
+width: 50%;
+}
+.questionsList{
+    margin-bottom: 20px;
+}
+.question{
+    margin-bottom: 12px;
+    font-size: 24px;
+    text-align: center;
+}
+.choice{
+    padding: 8px;
+    margin: 2px;
+    border: 1px solid #000;
+    list-style-type: none;
+}
+.choice:hover{
+    background: #000;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+}
+.questionContainer{
+    text-align: center;
+}
+.choice{
+    margin: 5px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #235789;
+}
+.correct{
+    background-color: green;
+    pointer-events: none;
+    user-select: none;
+}
+.incorrect{
+    background-color: red;
+   
+}
+.disable{
+    pointer-events: none;
+    user-select: none;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 24px;
+}
+#nextBtn {
+list-style-type: none;
+    background: #0077B6;
+    font-size: 14px;
+   box-shadow: 0 0 5px #000;
+    padding: 12px 50px;
+    outline: none;
+    border: none;
+}
+.setRecord {
+margin-top: 0px;
+    background: #0077B6;
+    font-size: 14px;
+   box-shadow: 0 0 5px #000;
+    padding: 12px 50px;
+    outline: none;
+    border: none;
+}
+#nextBtn:hover {
+    background: #FFB30F;
+    border: 1px solid #0077B6;
+    cursor:pointer;
+}
+.setRecord:hover {
+    background: #FFB30F;
+    border: 1px solid #0077B6;
+    cursor:pointer;
+}
+.recordListing{
+    list-style-type: none;
+    padding: 5px 12px;
+    margin: 5px 12px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.choice{
+    outline: none;
+}
+.choice:hover{
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}

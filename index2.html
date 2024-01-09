@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+
+<div id="signup" class="form-container" style="display: none;">
+    <h2>Sign Up</h2>
+    <form action="#">
+        <div class="input-container">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-container">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-container">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-container">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+    <p class="toggle-form" onclick="toggleForm('login')">Already have an account? Log In</p>
+</div>
+<div id="weather" class="form-container" style="display: none;">
+    <h2>Weather App</h2>
+    <!-- Weather data will be displayed here -->
+</div>
+</div>
+
+<script>
+function toggleForm(formType) {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('signup').style.display = 'none';
+    document.getElementById('weather').style.display = 'none';
+
+    if (formType === 'login') {
+        document.getElementById('login').style.display = 'block';
+    } else if (formType === 'signup') {
+        document.getElementById('signup').style.display = 'block';
+    } else if (formType === 'weather') {
+        document.getElementById('weather').style.display = 'block';
+    }
+}
+</script>
+</div>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDAjA_-NL1rEVau00jSEp8y3z366LGSKcQ",
+    authDomain: "project2-daddc.firebaseapp.com",
+    projectId: "project2-daddc",
+    storageBucket: "project2-daddc.appspot.com",
+    messagingSenderId: "487532086567",
+    appId: "1:487532086567:web:efba65fd2c2f6a158a1502"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+document.getElementById("submit").addEventListener('click',function(e){
+e.preventDefault();
+set(ref(db, 'user/'+document.getElementById('username').value),
+{
+username: document.getElementById("username").value,
+email: document.getElementById("email").value,
+password: document.getElementById("password").value,
+confirm_password: document.getElementById("confirm-password").value,
+
+})
+alert("signup successful !");
+})
+</script>
+
+<script src="scripts.js"></script>
+</body>
+</html>
