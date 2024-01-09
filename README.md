@@ -48,3 +48,5 @@ Efficient data management practices will be employed to maintain the integrity a
 
 7.3 Performance
 The platform will be optimized for optimal performance, ensuring a smooth and responsive learning experience.
+E-Learning Project YOUTUBE Link:
+https://youtu.be/zr9y0OhqM30?si=1ZjwT7m3czTIeHAX
